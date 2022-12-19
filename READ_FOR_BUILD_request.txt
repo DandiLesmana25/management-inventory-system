@@ -1,0 +1,42 @@
+JANGAN LUPA UNTUK IMPORT DATABASE ULANG
+
+penjelasan cara buat request barang
+a. buka header.php pada folder member sembunyikan codingan line 96-101
+1. autofill
+-tambahkan id pada button dan onclick pada button diline 168 (fungsinya untuk oper data menuju javascript)
+- javascriptnya simple dari line 189-196 (funginya untuk over data menuju ke form inputnya masing-masing)
+
+
+2. save data ke tabel sementara
+- tambahkan onclick pada tombol simpan draft diline 81, UBAH JADI TAG A (fungsinya untuk menjalankan javascript simpan_draft())
+- tambahkan javascript simpan_draft() dari line 210-242 (javascript ini fungsinya untuk save data ke tabel sementara)
+- buat controller baru namanya request (disini akan ada fungsi untuk oper data dari javascript simpan_draft menuju controller ini supaya data barang yang disimpan bisa kesave menuju tabel sementara)
+- pada controller request tambahkan codingan dari line 46-66- (codingan echo yang akan menampilkan data barang sementara yang diinputkan ketabel sementara)
+-pada request-barang.php tambahkan codingan dari line 244-252 (fungsinya untuk ketika klik simpan draft kolom kode, nama, tipa jmlh stok, jumlah ada ke reset supaya bisa diinputkan ulang lagi)
+- masih di request-barang.php tambahkan codingan dari line 266-273 (fungsinya untuk aksi hapus data pada tabel sementara)
+
+3. save data menuju tabel database
+-tambahkan tag form pada line 1dan tambahkan input hidden pada line 105 serta tag form tutup pada line 127
+-tambahkan type="submit" pada button diline 123
+- menuju controller request buat public fungsi baru dengan nama tambah_peminjaman() dari line 20-44
+-menuju model barang_model.php tambahkan public fungsi baru dengan nama tambahPeminjaman dari line 151-169 dan getDataPinjam dari line 171-177 serta tambahRequest dari line 130-148
+
+
+4. validasi kalau data sudah ada
+-tambahkan tombol reset diline 82
+-tambahkan javascript disabled tombol dari line 198-208
+-tambahkan javascript batal request dari line 254-264
+
+
+
+admin
+-buka header.php pada folder admin sembunyikan codingan line 101-106
+- buka file daftar-pinjaman.php, copy paste daftar-pinjaman.php
+- buat file detail-pinjaman.php
+- buka controller admin buat codingan line 41-54, fungsinya untuk membuat lihat detail peminjaman
+-buat fungsi setuju line 56-63, fungsinya untuk menerima pinjaman
+-buat fungsi ditolak line 65-73, fungsinya untuk tolak pinjaman
+-buka model user, buat codingan line 177-189, fungsinya untuk update status diterima
+-buka model user, buat codingan line 191-206, fungsinya untuk update status ditolak
+-buka model peminjaman ubah line 17 dari tanggal jadi id_pinjaman
+

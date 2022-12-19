@@ -1,0 +1,20 @@
+penambahan untuk data barang stok 0 gak bisa kepilih
+1. penambahan codingan dari line 167-175
+2. ubah check jadi detail pada file index.php di folder member line 46
+
+penambahan untuk admin
+1. buka header.php tambahkan codingan line 107-112
+untuk menu approval
+2. masuk controller admin.pho tambah codingan line 265-274
+3. masuk model peminjamanModel, ubah where status jadi !='Sedang diproses' untuk function getallpinjaman
+4. masih pada peminjamanModel buat codingan line 21-27
+5. buat file approve-pinjaman.php pada folder admin
+6 perubahan codingan pada daftar-pinjam.php (copy paste saja)
+7. tambahkan function pada controller admin codingan line 74-81
+8. masuk model user buat function line 208-219
+
+
+fungsi dari trigger
+1. pengurangan stok untuk mengurangi stok ketika terjadi peminjaman barang/ after insert tabel pinjam
+2. penambahan stok hapus request ini sebenarnya sebagai jaga-jaga jika terjadi delete data pada tb request barang akan langsung terjadi penambahan stok pada data barang sesuai dengan jumlah barang yang dipinjam pada tabel request barang. supaya balance stoknya. siapa tahu ada ketidak sengajaan dalam delete data.
+3. penambahan stok status selesai fungsinya untuk melakukan penambahan stok data barang saat proses pengembalian buku atau pengembalian selesai
