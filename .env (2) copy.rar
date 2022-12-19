@@ -1,0 +1,8 @@
+APP_NAME = 'Management Inventori System '
+
+BASEURL = 'http://localhost/final-project/public'
+
+DB_HOST = 'localhost'
+DB_USER = 'root'
+DB_PASS = ''
+DB_NAME = 'inventaris'
