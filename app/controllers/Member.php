@@ -2,7 +2,7 @@
 
 class Member extends Controller             //inheritence/pearisan dari class controller
 {
-//property
+    //property
     private $peminjamanModel;
     private $barangModel;
     private $userModel;
@@ -50,6 +50,18 @@ class Member extends Controller             //inheritence/pearisan dari class co
         }
     }
 
+
+    public function cari_barang()
+    {
+        $data['title'] = 'Barang';
+        $data['nama'] = $this->payload->nama;
+        $data['data_barang'] = $this->barangModel->getAllBarang();
+
+        $this->view('member/header', $data);
+        $this->view('member/cari-barang', $data);
+        $this->view('admin/footer');
+    }
+
     public function request_barang()
     {
         $data['title'] = 'Barang';
@@ -89,7 +101,7 @@ class Member extends Controller             //inheritence/pearisan dari class co
             echo 'Harap menggunakan tombol yang ada untuk melihat detail barang';
         }
     }
-    
+
     public function draft($id = 0)
     {
         if ($id) {
@@ -119,7 +131,7 @@ class Member extends Controller             //inheritence/pearisan dari class co
         $this->view('member/daftar-pinjaman', $data);
         $this->view('member/footer');
     }
-    
+
     public function input_peminjaman()
     {
         $data['title'] = 'Input Peminjaman';
@@ -145,7 +157,7 @@ class Member extends Controller             //inheritence/pearisan dari class co
         $this->view('member/input-peminjaman', $data);
         $this->view('member/footer');
     }
-    
+
     public function input_data()
     {
         $data['title'] = 'Input Data';

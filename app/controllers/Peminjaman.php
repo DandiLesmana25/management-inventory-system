@@ -6,7 +6,6 @@ class Peminjaman extends Controller
     private $peminjamanModel;
     private $userModel;
     private $barangModel;
-    // private $bukuModel;
 
     function __construct()
     {
@@ -35,7 +34,7 @@ class Peminjaman extends Controller
 
         $sudahPinjamBelumKembali = $this->peminjamanModel->pinjamBelumKembali($_POST);
         if ($sudahPinjamBelumKembali > 0) {
-            echo  ('x');
+            echo ('x');
             die;
         }
 
@@ -164,15 +163,14 @@ class Peminjaman extends Controller
         }
     }
 
-     public function tambah_peminjaman()
+    public function tambah_peminjaman()
     {
-            $data['id_member'] = $_POST["id_member"];
-            $data['lama_pinjam'] = $_POST["lama_pinjam"];
-            $data['buku'] = $_POST["buku"];
+        $data['id_member'] = $_POST["id_member"];
+        $data['lama_pinjam'] = $_POST["lama_pinjam"];
 
         $insert = $this->barangModel->tambahRequest($data);
-    
-            if ($insert>0) {
+
+        if ($insert > 0) {
             Flasher::setFlash('Request berhasil ditambahkan', 'success');
             header('Location: ' . BASEURL . '/member/request-barang');
             exit();

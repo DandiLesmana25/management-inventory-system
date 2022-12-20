@@ -1,6 +1,7 @@
 <?php
 
-class Register extends Controller {
+class Register extends Controller
+{
 
     private $userModel;
 
@@ -9,14 +10,16 @@ class Register extends Controller {
         $this->userModel = $this->model('User_model');
     }
 
-    public function index() {
+    public function index()
+    {
         $data['judul'] = 'Register';
         $this->view('auth/header', $data);
         $this->view('auth/register', $data);
         $this->view('auth/footer');
     }
 
-    public function regis() {
+    public function regis()
+    {
         if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             header('Location: ' . BASEURL . '/register');
         }

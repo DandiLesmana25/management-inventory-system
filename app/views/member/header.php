@@ -89,17 +89,17 @@
                     </li>
 
 
-                   <!--  <li class="nav-item w-100">
-                        <a class="nav-link" href="<?= BASEURL ?>/member/input_peminjaman">
-                            <i class="fe fe-credit-card fe-16"></i>
-                            <span class="ml-3 item-text">Request Barang</span>
-                        </a>
-                    </li> -->
-
                     <li class="nav-item w-100">
                         <a class="nav-link" href="<?= BASEURL ?>/member/request-barang">
                             <i class="fe fe-credit-card fe-16"></i>
                             <span class="ml-3 item-text">Request Barang</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item w-100">
+                        <a class="nav-link" href="<?= BASEURL ?>/member/cari-barang">
+                            <i class="fe fe-search fe-16"></i>
+                            <span class="ml-3 item-text">Cari Barang</span>
                         </a>
                     </li>
 
