@@ -22,7 +22,7 @@
                 <form action="<?= BASEURL ?>/member/edit-password" method="post">
                     <div class="form-group">
                         <label for="current_password">Password Sekarang</label>
-                        <input type="password" class="form-control" id="current_password" name="current_password">
+                        <input type="password" class="form-control" id="current_password" name="current_password" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="new_password">Password Baru</label>

@@ -54,15 +54,13 @@
                 <i class="fe fe-x"><span class="sr-only"></span></i>
             </a>
             <nav class="vertnav navbar navbar-light">
-                <!-- nav bar -->
+
                 <div class="w-100 mb-4 d-flex">
                     <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="<?= BASEURL ?>/member">
 
                         <img src="<?= BASEURL ?>/light/assets/avatars/logo.png" alt="logo" width="70%">
                     </a>
                 </div>
-
-                <!-- Memanggil sidebar member -->
 
                 <ul class="navbar-nav flex-fill w-100 mb-2">
 
@@ -81,6 +79,15 @@
                 </p>
                 <ul class="navbar-nav flex-fill w-100 mb-2">
 
+
+                    <li class="nav-item w-100">
+                        <a class="nav-link" href="<?= BASEURL ?>/member/request-barang">
+                            <i class="fe fe-edit fe-16"></i>
+                            <span class="ml-3 item-text">Request Barang</span>
+                        </a>
+                    </li>
+
+
                     <li class="nav-item w-100">
                         <a class="nav-link" href="<?= BASEURL ?>/member">
                             <i class="fe fe-grid fe-16"></i>
@@ -90,13 +97,6 @@
 
 
                     <li class="nav-item w-100">
-                        <a class="nav-link" href="<?= BASEURL ?>/member/request-barang">
-                            <i class="fe fe-credit-card fe-16"></i>
-                            <span class="ml-3 item-text">Request Barang</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item w-100">
                         <a class="nav-link" href="<?= BASEURL ?>/member/cari-barang">
                             <i class="fe fe-search fe-16"></i>
                             <span class="ml-3 item-text">Cari Barang</span>
@@ -104,13 +104,12 @@
                     </li>
 
 
-                    <li class="nav-item <?= ($data['title'] == 'Reset' ? 'active' : '') ?>">
+                    <li class="nav-item w-100">
                         <a class="nav-link" href="<?= BASEURL ?>/member/reset">
-                        <i class="fas fa-user"></i>
-                        <span>Reset Password</span>
+                            <i class="fe fe-key fe-16"></i>
+                            <span class="ml-3 item-text">Reset Password</span>
                         </a>
                     </li>
-
 
 
                     <li class="nav-item w-100">

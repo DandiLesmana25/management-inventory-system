@@ -63,8 +63,6 @@
                     </a>
                 </div>
 
-                <!-- Memanggil sidebar admin -->
-
                 <ul class="navbar-nav flex-fill w-100 mb-2">
 
                     <li class="nav-item w-100">
@@ -82,31 +80,11 @@
                 </p>
                 <ul class="navbar-nav flex-fill w-100 mb-2">
 
-                    <li class="nav-item w-100">
-                        <a class="nav-link" href="<?= BASEURL ?>/admin/daftar-user">
-                            <i class="fe fe-user-plus fe-16"></i>
-                            <span class="ml-3 item-text">Daftar User</span>
-                        </a>
-                    </li>
 
 
-                    <li class="nav-item w-100">
-                        <a class="nav-link" href="<?= BASEURL ?>/admin/daftar-barang">
-                            <i class="fe fe-box fe-16"></i>
-                            <span class="ml-3 item-text">Daftar Barang</span>
-                        </a>
-                    </li>
-
-
-                    <!-- <li class="nav-item w-100">
-                        <a class="nav-link" href="<?= BASEURL ?>/admin/input-peminjaman">
-                            <i class="fe fe-edit fe-16"></i>
-                            <span class="ml-3 item-text">Input Peminjaman</span>
-                        </a>
-                    </li> -->
                     <li class="nav-item w-100">
                         <a class="nav-link" href="<?= BASEURL ?>/admin/approve_pinjaman">
-                            <i class="fe fe-check fe-16"></i>
+                            <i class="fe fe-check-circle fe-16"></i>
                             <span class="ml-3 item-text">Apporval Peminjaman</span>
                         </a>
                     </li>
@@ -122,15 +100,19 @@
 
 
                     <li class="nav-item w-100">
-                        <a class="nav-link" href="<?= BASEURL ?>/admin/departement">
-                            <i class="fe fe-users fe-16"></i>
-                            <span class="ml-3 item-text">Departement</span>
+                        <a class="nav-link" href="<?= BASEURL ?>/admin/daftar-barang">
+                            <i class="fe fe-box fe-16"></i>
+                            <span class="ml-3 item-text">Daftar Barang</span>
                         </a>
                     </li>
 
 
-
-
+                    <li class="nav-item w-100">
+                        <a class="nav-link" href="<?= BASEURL ?>/admin/daftar-user">
+                            <i class="fe fe-user-plus fe-16"></i>
+                            <span class="ml-3 item-text">Daftar User</span>
+                        </a>
+                    </li>
 
 
             </nav>
