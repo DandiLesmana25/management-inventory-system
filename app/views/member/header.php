@@ -96,6 +96,14 @@
                         </a>
                     </li>
 
+                    <li class="nav-item <?= ($data['title'] == 'Reset' ? 'active' : '') ?>">
+                        <a class="nav-link" href="<?= BASEURL ?>/member/reset">
+                        <i class="fas fa-user"></i>
+                        <span>Reset Password</span>
+                        </a>
+                    </li>
+
+
 
                     <li class="nav-item w-100">
                         <a class="nav-link" href="<?= BASEURL ?>/member/kontak">
