@@ -11,7 +11,7 @@
 <?php endif; ?>
 <div class="card shadow">
   <div class="card-body">
-    <table id="tbl-daftar-pinjaman" class="table mt-3 dt-responsive nowrap" style="width:100%">
+    <table class="table mt-3 dt-responsive nowrap" style="width:100%">
       <thead class="thead-dark">
         <tr>
           <th>No</th>
@@ -23,6 +23,8 @@
         </tr>
       </thead>
       <tbody>
+
+
         <?php $i = 1;
         foreach ($data['pinjaman'] as $p) : ?>
           <tr>
@@ -32,17 +34,21 @@
             <td><?= $p['lama_pinjam'] ?> Hari</td>
             <?php if ($p['status_pinjam'] == "Ditolak") : ?>
               <td class="text-danger">Pinjaman Ditolak</td>
-               <td><a href="<?= BASEURL ?>/admin/lihat_pinjaman/<?= $p['id_pinjaman'] ?>" class="btn btn-info" title="Lihat Detail Data" style="color:white;">Detail</a></td>
+              <td><a href="<?= BASEURL ?>/admin/lihat_pinjaman/<?= $p['id_pinjaman'] ?>" class="btn btn-info" title="Lihat Detail Data" style="color:white;">Detail</a></td>
             <?php elseif ($p['status_pinjam'] == "Selesai") : ?>
               <td class="text-info">Selesai</td>
-               <td><a href="<?= BASEURL ?>/admin/lihat_pinjaman/<?= $p['id_pinjaman'] ?>" class="btn btn-info" title="Lihat Detail Data" style="color:white;">Detail</a></td>
+              <td><a href="<?= BASEURL ?>/admin/lihat_pinjaman/<?= $p['id_pinjaman'] ?>" class="btn btn-info" title="Lihat Detail Data" style="color:white;">Detail</a></td>
             <?php else : ?>
               <td class="text-success">Pinjaman Diterima</td>
               <td><a href="<?= BASEURL ?>/admin/lihat_pinjaman/<?= $p['id_pinjaman'] ?>" class="btn btn-info" title="Lihat Detail Data" style="color:white;">Detail</a>
-                <a onclick="return confirm('Pengembalian Barang ?');" href="<?= BASEURL ?>/admin/pengembalian/<?= $p['id_pinjaman'] ?>" class="btn btn-success" title="Pengembalian Barang" style="color:white;">Pengembalian</a></td>
+                <a onclick="return confirm('Pengembalian Barang ?');" href="<?= BASEURL ?>/admin/pengembalian/<?= $p['id_pinjaman'] ?>" class="btn btn-success" title="Pengembalian Barang" style="color:white;">Pengembalian</a>
+              </td>
             <?php endif ?>
           </tr>
         <?php endforeach; ?>
+
+
+
       </tbody>
     </table>
 
