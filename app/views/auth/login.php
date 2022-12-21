@@ -31,7 +31,7 @@
                         </form>
                         <hr>
                         <div class="text-center">
-                            <p class="small">Lupa Password? <a href="<?= BASEURL ?>/register">Hubungi admin</a></p>
+                            <p class="small">Punya Kendala? <a href="<?= BASEURL ?>/login/cs">customer service</a></p>
                         </div>
                     </div>
                 </div>

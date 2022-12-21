@@ -192,40 +192,19 @@ class Member extends Controller             //inheritence/pearisan dari class co
         $this->view('member/footer');
     }
 
-    public function profil()
+  
+
+   
+    public function reset()
     {
-        $data['title'] = 'Profil';
+        $data['title'] = 'Reset';
         $data['nama'] = $this->payload->nama;
         $data['id_member'] = $this->payload->id;
         $data['username'] = $this->payload->username;
 
         $this->view('member/header', $data);
-        $this->view('member/profil', $data);
+        $this->view('member/reset', $data);
         $this->view('member/footer');
-    }
-
-    public function edit_profil()
-    {
-        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            header('Location: ' . BASEURL . '/member/profil');
-        }
-
-        $data = $this->userModel->updateUser($this->payload->id, $this->payload->username, $_POST);
-        if ($data == 0) {
-            Flasher::setFlash('Username sudah digunakan', 'danger');
-            header('Location: ' . BASEURL . '/member/profil');
-        } else {
-            $new_payload = [
-                'id' => $this->payload->id,
-                'username' => $data['new_username'],
-                'nama' => $data['new_nama'],
-                'role' => $this->payload->role
-            ];
-            $new_jwt = SessionManager::makeJwt($new_payload);
-            setcookie('PPI-Login', $new_jwt, time() + (60 * 60 * 24 * 30), '/', '', false, true);
-            Flasher::setFlash('Profil berhasil diubah', 'success');
-            header('Location: ' . BASEURL . '/member/profil');
-        }
     }
 
     public function edit_password()
@@ -239,15 +218,15 @@ class Member extends Controller             //inheritence/pearisan dari class co
         //Cek apakah konfirmasi password sama
         if ($new_password != $new_password_confirmation) {
             Flasher::setFlash('Konfirmasi password tidak sama.', 'danger');
-            header('Location: ' . BASEURL . '/member/profil');
+            header('Location: ' . BASEURL . '/member/reset');
         } else {
             if (!password_verify($current_password, $data['password'])) {
                 Flasher::setFlash('Password lama salah.', 'danger');
-                header('Location: ' . BASEURL . '/member/profil');
+                header('Location: ' . BASEURL . '/member/reset');
             } else {
                 $this->userModel->updatePassword($this->payload->id, $new_password);
                 Flasher::setFlash('Password berhasil diubah', 'success');
-                header('Location: ' . BASEURL . '/member/profil');
+                header('Location: ' . BASEURL . '/member/reset');
             }
         }
     }
