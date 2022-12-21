@@ -164,15 +164,15 @@
                                      <td><?= $brg['tipe_barang'] ?></td>
                                      <td><?= $brg['jmlh_stok'] ?></td>
                                      <td><?= $brg['lokasi'] ?></td>
-                            <?php if ($brg['jmlh_stok']=="0") {  ?>
-                                <td>
-                                         <button class="btn btn-primary simpan-draft" disabled>Pilih</button>
-                                     </td>
-                                 <?php } else { ?>
-                                     <td>
-                                         <button id="Btn<?= $brg['id'] ?>" class="btn btn-primary simpan-draft" onclick="pilih_barang('<?= $brg['id'] ?>', '<?= $brg['kode_barang'] ?>','<?= $brg['nama_barang'] ?>','<?= $brg['tipe_barang'] ?>','<?= $brg['jmlh_stok'] ?>')">Pilih</button>
-                                     </td>
-                                    <?php } ?>
+                                     <?php if ($brg['jmlh_stok'] == "0") {  ?>
+                                         <td>
+                                             <button class="btn btn-primary simpan-draft" disabled>Pilih</button>
+                                         </td>
+                                     <?php } else { ?>
+                                         <td>
+                                             <button id="Btn<?= $brg['id'] ?>" class="btn btn-primary simpan-draft" onclick="pilih_barang('<?= $brg['id'] ?>', '<?= $brg['kode_barang'] ?>','<?= $brg['nama_barang'] ?>','<?= $brg['tipe_barang'] ?>','<?= $brg['jmlh_stok'] ?>')">Pilih</button>
+                                         </td>
+                                     <?php } ?>
                                  </tr>
                                  <?php $i++; ?>
                              <?php endforeach; ?>

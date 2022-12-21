@@ -52,19 +52,19 @@ class Admin extends Controller
         }
     }
 
-     public function setuju($id = 0)
+    public function setuju($id = 0)
     {
         if ($id) {
             $this->userModel->setujuiPinjaman($id);
-             Flasher::setFlash('Request berhasil disetujui', 'success');
-             header('Location: ' . BASEURL . '/admin/approve-pinjaman');
+            Flasher::setFlash('Request berhasil disetujui', 'success');
+            header('Location: ' . BASEURL . '/admin/approve-pinjaman');
         }
     }
 
     public function ditolak()
     {
         $insert = $this->userModel->tolakPinjaman($_POST);
-        if ($insert>0) {
+        if ($insert > 0) {
             Flasher::setFlash('Request berhasil ditolak', 'success');
             header('Location: ' . BASEURL . '/admin/approve-pinjaman');
             exit();
@@ -75,8 +75,8 @@ class Admin extends Controller
     {
         if ($id) {
             $this->userModel->pengembalianPinjaman($id);
-             Flasher::setFlash('Pengembalian berhasil', 'success');
-             header('Location: ' . BASEURL . '/admin/daftar-pinjaman');
+            Flasher::setFlash('Pengembalian berhasil', 'success');
+            header('Location: ' . BASEURL . '/admin/daftar-pinjaman');
         }
     }
 
@@ -226,30 +226,6 @@ class Admin extends Controller
         }
     }
 
-    // public function input_peminjaman()
-    // {
-    //     $data['title'] = 'Input Peminjaman';
-    //     $data['nama'] = $this->payload->nama;
-    //     $data['data_barang'] = $this->barangModel->getAllBarang();
-    //     $data['waktu'] = [
-    //         [
-    //             'waktu' => 3,
-    //             'nama' => '3 Hari'
-    //         ],
-    //         [
-    //             'waktu' => 7,
-    //             'nama' => '7 Hari'
-    //         ],
-    //         [
-    //             'waktu' => 14,
-    //             'nama' => '14 Hari'
-    //         ]
-    //     ];
-
-    //     $this->view('admin/header', $data);
-    //     $this->view('admin/input-peminjaman', $data);
-    //     $this->view('admin/footer');
-    // }
 
     public function daftar_pinjaman()
     {
@@ -294,7 +270,7 @@ class Admin extends Controller
         header('Location: ' . BASEURL . '/admin/departement');
     }
 
-    
+
     public function hapus_departement($id_departement)
     {
         if (!$id_departement) {
@@ -310,7 +286,7 @@ class Admin extends Controller
             header('Location: ' . BASEURL . '/admin/departement');
         }
     }
-    
+
     public function update_departement($id_departement = 0)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

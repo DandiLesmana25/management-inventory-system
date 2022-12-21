@@ -72,10 +72,8 @@ class User_model
 
     public function hapusUser($id)
     {
-        //Cek apakah id buku ada dalam database
         $this->db->query("SELECT id FROM users WHERE id = '$id'");
         $row = $this->db->numRows();
-        //Jika row berisikan nilai 0 maka tidak ada buku yang ingin dihapus dalam database
         if ($row == 0) {
             return 0;
         }
@@ -174,7 +172,7 @@ class User_model
         $this->db->execute();
     }
 
-     public function setujuiPinjaman($id)
+    public function setujuiPinjaman($id)
     {
 
 

@@ -104,7 +104,7 @@
                             <span class="ml-3 item-text">Input Peminjaman</span>
                         </a>
                     </li> -->
-                     <li class="nav-item w-100">
+                    <li class="nav-item w-100">
                         <a class="nav-link" href="<?= BASEURL ?>/admin/approve_pinjaman">
                             <i class="fe fe-check fe-16"></i>
                             <span class="ml-3 item-text">Apporval Peminjaman</span>
@@ -127,6 +127,8 @@
                             <span class="ml-3 item-text">Departement</span>
                         </a>
                     </li>
+
+
 
 
 

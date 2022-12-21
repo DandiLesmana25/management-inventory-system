@@ -89,28 +89,12 @@
                     </li>
 
 
-                   <!--  <li class="nav-item w-100">
-                        <a class="nav-link" href="<?= BASEURL ?>/member/input_peminjaman">
-                            <i class="fe fe-credit-card fe-16"></i>
-                            <span class="ml-3 item-text">Request Barang</span>
-                        </a>
-                    </li> -->
-
                     <li class="nav-item w-100">
                         <a class="nav-link" href="<?= BASEURL ?>/member/request-barang">
                             <i class="fe fe-credit-card fe-16"></i>
                             <span class="ml-3 item-text">Request Barang</span>
                         </a>
                     </li>
-
-                    <li class="nav-item <?= ($data['title'] == 'Reset' ? 'active' : '') ?>">
-                        <a class="nav-link" href="<?= BASEURL ?>/member/reset">
-                            <i class="fas fa-user"></i>
-                            <span>Reset Password</span>
-                        </a>
-                    </li>
-
-                    
 
 
                     <li class="nav-item w-100">
