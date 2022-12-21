@@ -48,15 +48,18 @@
 
             <tbody>
 
+                <!-- Algoritma Pencarian start -->
+
                 <?php if (isset($_POST['cari_barang'])) : ?>
                     <?php for ($i = 0; $i <= 10; $i++) : ?>
-                        <?php if (
+                        <?php if (str_contains(
                             strtolower(
                                 utf8_encode(
                                     ($data['data_barang'][$i]['nama_barang'])
                                 )
-                            ) == strtolower($_POST['keywords'])
-                        ) : ?>
+                            ),
+                            strtolower($_POST['keywords'])
+                        )) : ?>
                             <td><?= utf8_encode(($data['data_barang'][$i]['kode_barang'])) ?></td>
                             <td><?= utf8_encode(($data['data_barang'][$i]['nama_barang'])) ?></td>
                             <td><?= utf8_encode(($data['data_barang'][$i]['tipe_barang'])) ?></td>
@@ -67,6 +70,8 @@
                         <?php endif; ?>
                     <?php endfor; ?>
                 <?php endif; ?>
+
+                <!-- Algoritma pencarian end -->
 
             </tbody>
 
