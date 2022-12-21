@@ -61,6 +61,15 @@
                             <div class="text-center">
                                 <p class="small">Lupa Password? <a href="<?= BASEURL ?>/register">Hubungi admin</a></p>
                             </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input class="form-control" type="password" name="password" id="password" required>
+                            </div>
+                            <button class="btn btn-primary btn-user btn-block" type="submit" name="login">Login</button>
+                        </form>
+                        <hr>
+                        <div class="text-center">
+                            <p class="small">Punya Kendala? <a href="<?= BASEURL ?>/login/cs">customer service</a></p>
                         </div>
                     </div>
                 </div>
