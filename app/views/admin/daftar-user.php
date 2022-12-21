@@ -18,19 +18,11 @@
                          <label for="nama">Nama</label>
                          <input class="form-control" type="text" name="nama" id="nama" required>
                      </div>
-                     <div class="form-group">
-                         <label for="username">Username</label>
-                         <input class="form-control" type="text" name="username" id="username" required>
-                     </div>
                  </div>
                  <div class="col-sm-6">
-                     <div class="form-group">
-                         <label for="password">Password</label>
-                         <input class="form-control" type="password" name="password" id="password" required>
-                     </div>
-                     <div class="form-group">
-                         <label for="confirm_password">Confirm Password</label>
-                         <input class="form-control" type="password" name="password1" id="confirm_password" required>
+                 <div class="form-group">
+                    <label for="username">Username</label>
+                        <input class="form-control" type="text" name="username" id="username" required>
                      </div>
                  </div>
              </div>
@@ -72,6 +64,7 @@
                              <td><?= $brg['role'] ?></td>
                              <td class="text-center">
                                  <a class="badge badge-info" href="<?= BASEURL ?>/admin/detail-user/<?= $brg['id'] ?>">Detail </a>
+                                 <a class="badge badge-danger" href="<?= BASEURL ?>/admin/reset-password/<?= $brg['id'] ?>" onclick="return confirm('Apakah anda yakin ingin reset password?')">Reset Password</a>
                                  <a class="badge badge-danger" href="<?= BASEURL ?>/admin/hapus-user/<?= $brg['id'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                              </td>
                          </tr>

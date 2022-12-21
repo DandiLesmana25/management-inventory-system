@@ -172,10 +172,33 @@ class User_model
         $this->db->execute();
     }
 
+    public function resetPassword($id)
+    {
+        $hash_password = password_hash('p4ssw0rd', PASSWORD_DEFAULT);
+        $sql = "UPDATE users 
+                SET password = :hash_password
+                WHERE id = :id";
+        $this->db->query($sql);
+        $this->db->bind('hash_password', $hash_password);
+        $this->db->bind('id', $id);
+        $this->db->execute();
+    }
+
+    // public function resetPassword($id)
+    // {
+
+
+    //     $query = "UPDATE users SET password='p4ssw0rd' WHERE id='$id'";
+
+    //     $this->db->query($query);
+
+    //     $this->db->execute();
+
+    //     return $this->db->rowCount();
+    // }
+
     public function setujuiPinjaman($id)
     {
-
-
         $query = "UPDATE pinjaman SET status_pinjam='Diterima', 
         tanggal_pinjam = CURDATE(), tanggal_kembali=CURDATE()+INTERVAL lama_pinjam DAY WHERE id_pinjaman='$id'";
 
@@ -215,4 +238,6 @@ class User_model
 
         return $this->db->rowCount();
     }
+
+
 }

@@ -61,6 +61,15 @@ class Admin extends Controller
         }
     }
 
+    public function reset_password($id = 0)
+    {
+        if ($id) {
+            $this->userModel->ResetPassword($id);
+            Flasher::setFlash('Reset password berhasil', 'success');
+            header('Location: ' . BASEURL . '/admin/daftar-user');
+        }
+    }
+
     public function ditolak()
     {
         $insert = $this->userModel->tolakPinjaman($_POST);
@@ -161,27 +170,20 @@ class Admin extends Controller
 
         $nama = htmlspecialchars($_POST['nama']);
         $username = $_POST['username'];
-        $password = $_POST['password'];
-        $password1 = $_POST['password1'];
-        if ($password == $password1) {
-            $row = $this->userModel->getUserByUsername($username);
-            if ($row) {
-                // User ada 
-                Flasher::setFlash('Maaf, username sudah digunakan.', 'danger');
+        $row = $this->userModel->getUserByUsername($username);
+        if ($row) {
+            // User ada 
+            Flasher::setFlash('Maaf, username sudah digunakan.', 'danger');
+            header('Location: ' . BASEURL . '/admin/daftar-user');
+        } else {
+            $insert = $this->userModel->insert($nama, $username, 'p4ssw0rd');
+            if ($insert) {
+                Flasher::setFlash('Register berhasil, silahkan login.', 'success');
                 header('Location: ' . BASEURL . '/admin/daftar-user');
             } else {
-                $insert = $this->userModel->insert($nama, $username, $password);
-                if ($insert) {
-                    Flasher::setFlash('Register berhasil, silahkan login.', 'success');
-                    header('Location: ' . BASEURL . '/admin/daftar-user');
-                } else {
-                    Flasher::setFlash('Gagal register.', 'danger');
-                    header('Location: ' . BASEURL . '/admin/daftar-user');
-                }
+                Flasher::setFlash('Gagal register.', 'danger');
+                header('Location: ' . BASEURL . '/admin/daftar-user');
             }
-        } else {
-            Flasher::setFlash('Password dan konfirmasi password salah.', 'danger');
-            header('Location: ' . BASEURL . '/admin/daftar-user');
         }
     }
 
@@ -248,6 +250,7 @@ class Admin extends Controller
         $this->view('admin/approve-pinjaman', $data);
         $this->view('admin/footer');
     }
+
 
     public function departement()
     {
