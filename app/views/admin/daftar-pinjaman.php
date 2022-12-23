@@ -9,6 +9,7 @@
     <?= $flash['pesan'] ?>
   </div>
 <?php endif; ?>
+
 <div class="card shadow">
   <div class="card-body">
     <table class="table mt-3 dt-responsive nowrap" style="width:100%">
@@ -23,6 +24,8 @@
         </tr>
       </thead>
       <tbody>
+
+        <!-- Merge sort start -->
 
         <?php
         $selesai = [];
@@ -41,8 +44,9 @@
           $i++;
         }
         $gabung = array_merge($terima, $selesai, $tolak);
+        ?>
 
-        foreach ($gabung as $p) : ?>
+        <?php foreach ($gabung as $p) : ?>
           <tr>
             <td><?= $i++ ?></td>
             <td><?= date('d M Y', strtotime($p['tanggal_transaksi'])) ?></td>
@@ -65,9 +69,12 @@
 
         ?>
 
+        <!-- Merge -->
 
       </tbody>
     </table>
+
+
 
   </div>
 
