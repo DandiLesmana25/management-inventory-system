@@ -1,4 +1,4 @@
-<h3>Reset Password</h3>
+<h3>Ganti Password</h3>
 <hr>
 
 <div class="card shadow">

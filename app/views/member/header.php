@@ -107,7 +107,7 @@
                     <li class="nav-item w-100">
                         <a class="nav-link" href="<?= BASEURL ?>/member/reset">
                             <i class="fe fe-key fe-16"></i>
-                            <span class="ml-3 item-text">Reset Password</span>
+                            <span class="ml-3 item-text">Ganti Password</span>
                         </a>
                     </li>
 
