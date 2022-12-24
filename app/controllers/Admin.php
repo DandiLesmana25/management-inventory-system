@@ -30,7 +30,7 @@ class Admin extends Controller
         $data['nama'] = $this->payload->nama;
         $data['jml_barang'] = $this->barangModel->countBarang();
         $data['jml_member'] = $this->userModel->countMember();
-        $data['belum_kembali'] = $this->peminjamanModel->countBelumKembali();
+        $data['proses'] = $this->peminjamanModel->countProsesadmin();
         $data['selesai'] = $this->peminjamanModel->countSelesai();
 
         $this->view('admin/header', $data);

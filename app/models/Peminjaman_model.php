@@ -49,9 +49,9 @@ class Peminjaman_model
         return $this->db->numRows();
     }
 
-    public function countBelumKembali()
+    public function countProsesadmin()
     {
-        $sql = "SELECT COUNT(*) FROM pinjaman WHERE tanggal_kembali IS NULL";
+        $sql = "SELECT COUNT(*) FROM pinjaman WHERE status_pinjam='Sedang Diproses'";
         $this->db->query($sql);
         return $this->db->numRows();
     }
@@ -72,13 +72,13 @@ class Peminjaman_model
 
     public function countTolak($id)
     {
-        $sql = "SELECT COUNT(*) FROM pinjaman WHERE tanggal_kembali IS NULL AND id_member='$id'";
+        $sql = "SELECT COUNT(*) FROM pinjaman WHERE status_pinjam='Ditolak' AND id_member='$id'";
         $this->db->query($sql);
         return $this->db->numRows();
     }
-    public function countKembali($id)
+    public function countProses($id)
     {
-        $sql = "SELECT COUNT(*) FROM pinjaman WHERE status_pinjam='Ditolak' AND id_member='$id'";
+        $sql = "SELECT COUNT(*) FROM pinjaman WHERE status_pinjam='Sedang Diproses' AND id_member='$id'";
         $this->db->query($sql);
         return $this->db->numRows();
     }
@@ -89,7 +89,7 @@ class Peminjaman_model
 
         //Insert get id
         $sql = "INSERT INTO pinjaman VALUES
-                (null, :id_member, :tanggal_pinjam, :lama_pinjam, null, null)";
+                (null, :id_member, :tanggal_pinjam, :lama_pinjam, null)";
         $this->db->query($sql);
         $fields = [
             'id_member' => $id_member,

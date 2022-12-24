@@ -12,7 +12,7 @@
                         <label for="nama_barang">Nama Barang</label>
                         <input class="form-control" type="text" name="nama_barang" id="nama_barang" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="tipe_barang">Tipe Barang</label>
                         <input class="form-control" type="text" name="tipe_barang" id="tipe_barang" required>
@@ -37,7 +37,7 @@
             <button class="btn btn-primary" type="submit" name="submit">Tambah Barang</button>
             <button class="btn btn-danger" type="reset">Reset</button>
         </form>
-        
+
 
 
 
@@ -81,9 +81,9 @@
                             <td><?= $brg['lokasi'] ?></td>
                             <td><?= $brg['tgl_regist'] ?></td>
                             <td class="text-center">
-                                <a class="badge badge-info" href="<?= BASEURL ?>/admin/detail-barang/<?= $brg['id'] ?>">Detail</a>
-                                <a class="badge badge-warning" href="<?= BASEURL ?>/admin/ubah-barang/<?= $brg['id'] ?>">Ubah</a>
-                                <a class="badge badge-danger" href="<?= BASEURL ?>/admin/hapus-barang/<?= $brg['id'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
+                                <a class="btn btn-primary" href="<?= BASEURL ?>/admin/detail-barang/<?= $brg['id'] ?>">Detail</a>
+                                <a class="btn btn-success" href="<?= BASEURL ?>/admin/ubah-barang/<?= $brg['id'] ?>">Ubah</a>
+                                <a class="btn btn-danger" href="<?= BASEURL ?>/admin/hapus-barang/<?= $brg['id'] ?>" onclick="return confirm('Apakah anda yakin ingin menghapus?')">Hapus</a>
                             </td>
                         </tr>
                         <?php $i++; ?>

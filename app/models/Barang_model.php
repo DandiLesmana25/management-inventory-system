@@ -162,7 +162,7 @@ class Barang_model
         $lama_pinjam = $data['lama_pinjam'];
 
         $query = "INSERT INTO pinjaman
-        VALUES ('', :id_member, :tanggal_transaksi , null, :lama_pinjam, null, null, :status_pinjam, null)";
+        VALUES ('', :id_member, :tanggal_transaksi , null, :lama_pinjam, null, :status_pinjam, null)";
 
         $this->db->query($query);
         $this->db->bind('id_member', $id_member);

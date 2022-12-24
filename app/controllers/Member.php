@@ -33,7 +33,7 @@ class Member extends Controller             //inheritence/pearisan dari class co
         $data['jml_barang'] = $this->barangModel->countBarang();
         $data['pinjaman_selesai'] = $this->peminjamanModel->countSelesai2($this->payload->id);
         $data['pinjaman_tolak'] = $this->peminjamanModel->countTolak($this->payload->id);
-        $data['belum_kembali'] = $this->peminjamanModel->countKembali($this->payload->id);
+        $data['proses'] = $this->peminjamanModel->countProses($this->payload->id);
         $this->view('member/header', $data);
         $this->view('member/index', $data);
         $this->view('member/footer');

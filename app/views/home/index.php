@@ -26,7 +26,7 @@
 
 <body style="padding: 5% 10%;">
 
-    <div style="">
+    <div>
         <div class="card o-hidden border-0 shadow-lg my-5 col-lg-4 mx-auto">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
@@ -59,7 +59,7 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <p class="small">Punya Kendala? <a href="<?= BASEURL ?>/login/cs">customer service</a></p>
+                                <p class="small">Lupa Password? <a href="<?= BASEURL ?>/login/cs">Hubungi Admin</a></p>
                             </div>
                         </div>
                     </div>

@@ -18,7 +18,7 @@
         <?php endif; ?>
         <div class="row mt-3">
             <div class="col-sm-6">
-                <h5>Ubah password</h5>
+                <h5>Ganti password</h5>
                 <form action="<?= BASEURL ?>/member/edit-password" method="post">
                     <div class="form-group">
                         <label for="current_password">Password Sekarang</label>
@@ -32,7 +32,7 @@
                         <label for="new_password_confirmation">Konfirmasi Password Baru</label>
                         <input type="password" class="form-control" id="new_password_confirmation" name="new_password_confirmation">
                     </div>
-                    <button class="btn btn-primary" type="submit" name="submit_password" onclick="return confirm('Apakah anda yakin ingin mengubah password')">Ubah password</button>
+                    <button class="btn btn-primary" type="submit" name="submit_password" onclick="return confirm('Apakah anda yakin ingin mengubah password')">Ganti password</button>
                 </form>
             </div>
         </div>
