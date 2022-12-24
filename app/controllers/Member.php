@@ -30,6 +30,10 @@ class Member extends Controller             //inheritence/pearisan dari class co
         $data['id_member'] = $this->payload->id;
         $data['nama'] = $this->payload->nama;
         $data['pinjaman'] = $this->peminjamanModel->getPinjamanMember($this->payload->id);
+        $data['jml_barang'] = $this->barangModel->countBarang();
+        $data['pinjaman_selesai'] = $this->peminjamanModel->countSelesai2($this->payload->id);
+        $data['pinjaman_tolak'] = $this->peminjamanModel->countTolak($this->payload->id);
+        $data['belum_kembali'] = $this->peminjamanModel->countKembali($this->payload->id);
         $this->view('member/header', $data);
         $this->view('member/index', $data);
         $this->view('member/footer');
@@ -126,6 +130,7 @@ class Member extends Controller             //inheritence/pearisan dari class co
         $data['title'] = 'Daftar Pinjaman';
         $data['nama'] = $this->payload->nama;
         $data['pinjaman'] = $this->peminjamanModel->getPinjamanMember($this->payload->id);
+        $data['jml_member'] = $this->userModel->countMember();
 
         $this->view('member/header', $data);
         $this->view('member/daftar-pinjaman', $data);
@@ -204,9 +209,9 @@ class Member extends Controller             //inheritence/pearisan dari class co
         $this->view('member/footer');
     }
 
-  
 
-   
+
+
     public function reset()
     {
         $data['title'] = 'Reset';

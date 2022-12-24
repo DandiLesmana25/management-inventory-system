@@ -83,12 +83,9 @@
                     </div>
                 </div>
 
+                <img src="<?= BASEURL ?>/light/assets/avatars/lupa.png" alt="logo" width="100%">
+
 
             </div> <!-- end section -->
 
-            <div class="my-5 p-8">
-                <div class="text-center">
-                    <h2 class="mb-0">PT ADVICS MANUFACTURING INDONESIA</h2>
-                    <p class="lead text-muted mb-5">Jalan Harapan VIII Lot LL No. 9-10, Kawasan Industri KIIC, Parungmulya, Kec. Ciampel, Karawang, Jawa Barat 41361</p>
-                </div>
-            </div </main> <!-- main -->
+        </div </main> <!-- main -->

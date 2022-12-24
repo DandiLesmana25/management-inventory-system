@@ -12,7 +12,7 @@
 
 <div class="card shadow">
   <div class="card-body">
-    <table class="table mt-3 dt-responsive nowrap" style="width:100%">
+    <table id="tbl-daftar-pinjaman" class="table mt-3 dt-responsive nowrap" style="width:100%">
       <thead class="thead-dark">
         <tr>
           <th>No</th>
@@ -25,7 +25,7 @@
       </thead>
       <tbody>
 
-        <!-- Merge sort start -->
+        <!-- Brute force start -->
 
         <?php
         $selesai = [];
@@ -44,6 +44,7 @@
         $gabung = array_merge($terima, $selesai, $tolak);
 
         ?>
+
 
         <?php $i = 1;
         foreach ($gabung as $p) : ?>
@@ -67,7 +68,7 @@
           </tr>
         <?php endforeach; ?>
 
-        <!-- Merge sort  -->
+        <!-- Brute force end  -->
 
       </tbody>
     </table>

@@ -116,9 +116,6 @@ class User_model
             'nama' => $nama
         ];
         $this->db->binds($fields);
-        // $this->db->bind('username', $username);
-        // $this->db->bind('pass', $new_password);
-        // $this->db->bind('nama', $nama);
 
         try {
             $this->db->execute();

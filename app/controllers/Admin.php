@@ -31,6 +31,7 @@ class Admin extends Controller
         $data['jml_barang'] = $this->barangModel->countBarang();
         $data['jml_member'] = $this->userModel->countMember();
         $data['belum_kembali'] = $this->peminjamanModel->countBelumKembali();
+        $data['selesai'] = $this->peminjamanModel->countSelesai();
 
         $this->view('admin/header', $data);
         $this->view('admin/index', $data);
@@ -248,76 +249,6 @@ class Admin extends Controller
 
         $this->view('admin/header', $data);
         $this->view('admin/approve-pinjaman', $data);
-        $this->view('admin/footer');
-    }
-
-
-    public function departement()
-    {
-        $data['title'] = 'Departement';
-        $data['nama'] = $this->payload->nama;
-        $data['departement'] = $this->departementModel->getAllDepartement();
-        $this->view('admin/header', $data);
-        $this->view('admin/departement', $data);
-        $this->view('admin/footer');
-    }
-
-    public function tambah_departement()
-    {
-        if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-            header('Location: ' . BASEURL . '/admin/departement');
-        }
-
-        $this->departementModel->tambahDepartement($_POST);
-        Flasher::setFlash('Departement baru berhasil ditambah', 'success');
-        header('Location: ' . BASEURL . '/admin/departement');
-    }
-
-
-    public function hapus_departement($id_departement)
-    {
-        if (!$id_departement) {
-            header('Location: ' . BASEURL . '/admin/departement');
-        }
-
-        $hapus = $this->departementModel->hapusDepartement($id_departement);
-        if ($hapus == 0) {
-            Flasher::setFlash('Departement tidak ditemukan', 'danger');
-            header('Location: ' . BASEURL . '/admin/departement');
-        } else {
-            Flasher::setFlash('Departement berhasil dihapus', 'success');
-            header('Location: ' . BASEURL . '/admin/departement');
-        }
-    }
-
-    public function update_departement($id_departement = 0)
-    {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $this->departementModel->updateDepartement($id_departement, $_POST);
-            Flasher::setFlash('Departement berhasil diubah', 'success');
-            header('Location: ' . BASEURL . '/admin/departement');
-        }
-
-        if ($id_departement) {
-            $data['title'] = 'Departement';
-            $data['nama'] = $this->payload->nama;
-            $data['departement'] = $this->departementModel->getDepartementById($id_departement);
-
-            $this->view('admin/header', $data);
-            $this->view('admin/update-departement', $data);
-            $this->view('admin/footer');
-        } else {
-            header('Location: ' . BASEURL . '/admin/departement');
-        }
-    }
-
-    public function about()
-    {
-        $data['title'] = 'About';
-        $data['nama'] = $this->payload->nama;
-
-        $this->view('admin/header', $data);
-        $this->view('about/index', $data);
         $this->view('admin/footer');
     }
 

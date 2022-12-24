@@ -72,9 +72,6 @@ class Departement_model
             'id_departement' => $id_departement
         ];
         $this->db->binds($fields);
-        // $this->db->bind('nama_kategori', $nama_kategori);
-        // $this->db->bind('keterangan', $keterangan);
-        // $this->db->bind('id', $id);
         $this->db->execute();
     }
 }

@@ -1,18 +1,22 @@
 <?php
 
- //menggunakan method static agar kita tidak perlu melakukan instansiasi pada class flasher
+//menggunakan method static agar kita tidak perlu melakukan instansiasi pada class flasher
 
-class Flasher {
+class Flasher
+{
 
 
-    public static function setFlash($pesan, $tipe) {   
+    public static function setFlash($pesan, $tipe)
+    {
         //membuat flash message
         $_SESSION['flash'] = [
             'pesan' => $pesan,
-            'tipe' => $tipe];
+            'tipe' => $tipe
+        ];
     }
 
-    public static function flash() {
+    public static function flash()
+    {
         //cek apakah ada session
         if (isset($_SESSION['flash'])) {
             $flash['pesan'] = $_SESSION['flash']['pesan'];
@@ -22,7 +26,8 @@ class Flasher {
         }
     }
 
-    public static function check() {
+    public static function check()
+    {
         if (isset($_SESSION['flash'])) {
             return true;
         }
@@ -32,4 +37,3 @@ class Flasher {
 
 //flasher/ flash message digunakan ketika kita telah selesai mengerjakan suatu aksi di dalam crud(creat,read,input,delete) mvc kita
 // untuk membuat flash message menggunakan $_session
-//

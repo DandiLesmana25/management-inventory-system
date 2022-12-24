@@ -56,6 +56,33 @@ class Peminjaman_model
         return $this->db->numRows();
     }
 
+    public function countSelesai()
+    {
+        $sql = "SELECT COUNT(*) FROM pinjaman WHERE status_pinjam='Selesai'";
+        $this->db->query($sql);
+        return $this->db->numRows();
+    }
+
+    public function countSelesai2($id)
+    {
+        $sql = "SELECT COUNT(*) FROM pinjaman WHERE status_pinjam='Selesai' AND id_member='$id'";
+        $this->db->query($sql);
+        return $this->db->numRows();
+    }
+
+    public function countTolak($id)
+    {
+        $sql = "SELECT COUNT(*) FROM pinjaman WHERE tanggal_kembali IS NULL AND id_member='$id'";
+        $this->db->query($sql);
+        return $this->db->numRows();
+    }
+    public function countKembali($id)
+    {
+        $sql = "SELECT COUNT(*) FROM pinjaman WHERE status_pinjam='Ditolak' AND id_member='$id'";
+        $this->db->query($sql);
+        return $this->db->numRows();
+    }
+
     public function simpanPinjaman($pinjaman, $id_member, $lama_pinjam)
     {
         $tanggal_pinjam = date('Y-m-d');
@@ -70,9 +97,6 @@ class Peminjaman_model
             'lama_pinjam' => $lama_pinjam
         ];
         $this->db->binds($fields);
-        // $this->db->bind('id_member', $id_member);
-        // $this->db->bind('tanggal_pinjam', $tanggal_pinjam);
-        // $this->db->bind('lama_pinjam', $lama_pinjam);
         $this->db->execute();
         $id_peminjaman = $this->db->lastInsertId();
 
@@ -122,9 +146,6 @@ class Peminjaman_model
             'id_pinjaman' => $id_pinjaman
         ];
         $this->db->binds($fields);
-        // $this->db->bind('tanggal_kembali', $tanggal_kembali);
-        // $this->db->bind('denda', $denda);
-        // $this->db->bind('id_pinjaman', $id_pinjaman);
         $this->db->execute();
     }
 

@@ -18,7 +18,7 @@ class Database
         $options = [
             //Supaya databasenya konek terus
             PDO::ATTR_PERSISTENT => true,
-             // set the PDO error mode to exception
+            // set the PDO error mode to exception
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ];
 
@@ -78,9 +78,6 @@ class Database
                     $type = PDO::PARAM_STR;
             }
 
-
-            // $this->stmt->bindValue($param, $value, $type);
-             //Fungsi ini mengikat parameter ke queri SQL dan memberi tahu database apa saja parameternya.
             $this->bind($param, $value, $type);
         }
     }

@@ -89,7 +89,7 @@
 
 
                     <li class="nav-item w-100">
-                        <a class="nav-link" href="<?= BASEURL ?>/member">
+                        <a class="nav-link" href="<?= BASEURL ?>/member/daftar-pinjaman">
                             <i class="fe fe-grid fe-16"></i>
                             <span class="ml-3 item-text">Daftar Pinjaman</span>
                         </a>
