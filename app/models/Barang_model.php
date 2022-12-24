@@ -18,7 +18,7 @@ class Barang_model
 
     public function getBarang($idpinjam)
     {
-         $this->db->query("SELECT * FROM detail_pinjaman INNER JOIN data_barang ON data_barang.id=detail_pinjaman.id_barang WHERE id_pinjaman = '$idpinjam'");
+        $this->db->query("SELECT * FROM detail_pinjaman INNER JOIN data_barang ON data_barang.id=detail_pinjaman.id_barang WHERE id_pinjaman = '$idpinjam'");
         return $this->db->resultSet();
     }
 
@@ -29,6 +29,13 @@ class Barang_model
     }
 
     public function countBarang()
+    {
+        $this->db->query("SELECT COUNT(*) FROM data_barang");
+        return $this->db->numRows();
+    }
+
+
+    public function countBaranguser()
     {
         $this->db->query("SELECT COUNT(*) FROM data_barang");
         return $this->db->numRows();
@@ -127,7 +134,7 @@ class Barang_model
         return 1;
     }
 
-     public function tambahRequest($data)
+    public function tambahRequest($data)
     {
 
         $id_barang = $data['id_barang'];
@@ -148,7 +155,7 @@ class Barang_model
     }
 
 
-     public function tambahPeminjaman($data)
+    public function tambahPeminjaman($data)
     {
 
         $id_member = $data['id_member'];
@@ -168,7 +175,7 @@ class Barang_model
         return $this->db->rowCount();
     }
 
-    public function getDataPinjam($idmember,$lamawaktu)
+    public function getDataPinjam($idmember, $lamawaktu)
     {
         $sql = "SELECT id_pinjaman FROM pinjaman 
         WHERE id_member = '$idmember' AND lama_pinjam = '$lamawaktu' GROUP BY id_pinjaman DESC LIMIT 1";
@@ -182,6 +189,4 @@ class Barang_model
         $this->db->query($sql);
         return $this->db->resultSet();
     }
-
-    
 }

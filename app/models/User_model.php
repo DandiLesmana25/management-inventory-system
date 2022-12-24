@@ -230,7 +230,7 @@ class User_model
     {
 
 
-        $query = "UPDATE pinjaman SET status_pinjam='Selesai' WHERE id_pinjaman='$id'";
+        $query = "UPDATE pinjaman SET status_pinjam='Selesai', tanggal_kembali= CURDATE()  WHERE id_pinjaman='$id'";
 
         $this->db->query($query);
 
@@ -238,6 +238,4 @@ class User_model
 
         return $this->db->rowCount();
     }
-
-
 }

@@ -145,7 +145,7 @@ class Peminjaman_model
         return $this->db->resultSet();
     }
 
-     public function getDtPinjaman($idpinjaman)
+    public function getDtPinjaman($idpinjaman)
     {
         $sql = "SELECT * FROM pinjaman 
         WHERE id_pinjaman = '$idpinjaman'";

@@ -32,7 +32,7 @@
                         <label for="new_password_confirmation">Konfirmasi Password Baru</label>
                         <input type="password" class="form-control" id="new_password_confirmation" name="new_password_confirmation">
                     </div>
-                    <button class="btn btn-primary" type="submit" name="submit_password">Ubah password</button>
+                    <button class="btn btn-primary" type="submit" name="submit_password" onclick="return confirm('Apakah anda yakin ingin mengubah password')">Ubah password</button>
                 </form>
             </div>
         </div>

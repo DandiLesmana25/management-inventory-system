@@ -32,7 +32,6 @@
         $tolak = [];
         $terima = [];
         $gabung = [];
-        $i = 0;
         foreach ($data['pinjaman'] as $p) {
           if ($p['status_pinjam'] == "Diterima") {
             $terima[] = $p;
@@ -41,12 +40,13 @@
           } elseif ($p['status_pinjam'] == "Ditolak") {
             $tolak[] = $p;
           }
-          $i++;
         }
         $gabung = array_merge($terima, $selesai, $tolak);
+
         ?>
 
-        <?php foreach ($gabung as $p) : ?>
+        <?php $i = 1;
+        foreach ($gabung as $p) : ?>
           <tr>
             <td><?= $i++ ?></td>
             <td><?= date('d M Y', strtotime($p['tanggal_transaksi'])) ?></td>
@@ -67,9 +67,7 @@
           </tr>
         <?php endforeach; ?>
 
-        ?>
-
-        <!-- Merge -->
+        <!-- Merge sort  -->
 
       </tbody>
     </table>

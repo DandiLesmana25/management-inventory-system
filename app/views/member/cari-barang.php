@@ -49,6 +49,9 @@
 
                 <!-- Algoritma Pencarian start -->
 
+
+
+
                 <?php if (isset($_POST['cari_barang'])) : ?>
                     <?php foreach ($data['data_barang'] as $brg) : ?>
                         <?php if (str_contains(
