@@ -8,7 +8,7 @@ if (file_exists('../.env')) {
     $dotenv = Dotenv\Dotenv::createImmutable('../');
     $dotenv->load();
 }
-
+//memanggil file init.php di dalam folder app
 require_once '../app/init.php';
 
 $app = new App;

@@ -1,7 +1,7 @@
 <?php
-
+//data dari database
 define('APP_NAME', $_ENV['APP_NAME']);
-define('BASEURL', $_ENV['BASEURL']);  //BASEURL = 'http://localhost/finalproject/public'
+define('BASEURL', $_ENV['BASEURL']);  
 
 //Database
 define('DB_HOST', $_ENV['DB_HOST']);

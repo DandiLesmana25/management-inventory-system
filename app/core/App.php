@@ -2,6 +2,7 @@
 // berisi logic routing
 class App
 {
+    //property untuk menentukan controller, method dan parameter default
     protected $controller = 'Home';
     protected $method = 'index';
     protected $params = [];

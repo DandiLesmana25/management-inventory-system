@@ -1,3 +1,4 @@
 <!-- mem block user masuk ke folder app -->
+<!-- selama di dalam folder itu tidak ada file index maka jangan tampilkan isi foldernya -->
 Options -Indexes
 

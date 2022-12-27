@@ -1,5 +1,6 @@
 <?php
 
+//database wrapper
 class Database
 {
     private $host = DB_HOST;
@@ -7,12 +8,12 @@ class Database
     private $pass = DB_PASS;
     private $db_name = DB_NAME;
 
-    private $dbh;
-    private $stmt;
+    private $dbh;                   //database handlerr (untuk menampung koneksi ke databse)
+    private $stmt;                  //untuk menyimpan query
 
     public function __construct()
     {
-        // Data source name
+        // Data source name (koneksi ke PDO)
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->db_name;
 
         $options = [

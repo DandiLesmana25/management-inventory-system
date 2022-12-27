@@ -13,7 +13,8 @@ class Home extends Controller {
         $data['nama_barang'] = 'Home';
         $data['data_barang'] = $this->model->getAllBarang();
         $data['page'] = 'home';
-
-        $this->view('home/index', $data);
+        
+        //method view inhritence dari Controller
+        $this->view('home/index', $data);        // method view  memanggil  folder views/home/ file index.php
     }
 }
