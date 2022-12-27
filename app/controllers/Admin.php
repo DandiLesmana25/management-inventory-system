@@ -1,5 +1,7 @@
 <?php
 
+
+//inheritence dari class controller
 class Admin extends Controller
 {
     private $barangModel;
@@ -18,8 +20,11 @@ class Admin extends Controller
             header('Location: ' . BASEURL . '/login');
         }
 
+
+
+        // ketika class model dipanggil maka akan otomatis terinstansiasi dari class Database
         $this->barangModel = $this->model('Barang_model');
-        $this->departementModel = $this->model('Departement_model');
+        // $this->departementModel = $this->model('Departement_model');
         $this->peminjamanModel = $this->model('Peminjaman_model');
         $this->userModel = $this->model('User_model');
     }

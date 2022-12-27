@@ -1,5 +1,6 @@
 <?php
-//data dari database
+
+//konfigurasi dari mysql
 define('APP_NAME', $_ENV['APP_NAME']);
 define('BASEURL', $_ENV['BASEURL']);  
 

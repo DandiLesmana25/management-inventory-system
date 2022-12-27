@@ -19,7 +19,8 @@ class Peminjaman extends Controller
         } else {
             header('Location: ' . BASEURL . '/login');
         }
-        $this->peminjamanModel = $this->model('Peminjaman_model');
+         // ketika class model dipanggil maka akan otomatis terinstansiasi dari class Database
+        $this->peminjamanModel = $this->model('Peminjaman_model'); 
         $this->userModel = $this->model('User_model');
         $this->barangModel = $this->model('Barang_model');
     }

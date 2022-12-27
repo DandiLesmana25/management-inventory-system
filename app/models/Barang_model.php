@@ -2,11 +2,12 @@
 
 class Barang_model
 {
-
+    //vaariabel untuk menampung class database
     private $db;
 
     public function __construct()
-    {
+    {   
+        //ketika construct dipanggil akan konek ke class Database
         $this->db = new Database;
     }
 

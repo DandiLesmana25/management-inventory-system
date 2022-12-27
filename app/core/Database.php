@@ -2,7 +2,7 @@
 
 //database wrapper
 class Database
-{
+{ //data dari database yang ada dalam file config
     private $host = DB_HOST;
     private $user = DB_USER;
     private $pass = DB_PASS;
@@ -15,7 +15,9 @@ class Database
     {
         // Data source name (koneksi ke PDO)
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->db_name;
+          
 
+        //optimasi koneksi ke database
         $options = [
             //Supaya databasenya konek terus
             PDO::ATTR_PERSISTENT => true,
@@ -31,12 +33,16 @@ class Database
             }
         }
     }
+    
 
+    //method untuk menjalankan query
     public function query($query)
     {
         $this->stmt = $this->dbh->prepare($query);
     }
+     
 
+    //binding data
     public function bind($param, $value, $type = null)
     {
         if (is_null($type)) {
@@ -83,16 +89,21 @@ class Database
         }
     }
 
+
+    //eksekuasi query
     public function execute()
     {
         $this->stmt->execute();
     }
 
+    //eksekusi query jika datanya banyak
     public function resultSet()
     {
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);  //digunakan untuk mengambil baris hasil sebagai array asosiatif.
     }
+
+
 
     public function single()
     {
@@ -116,3 +127,6 @@ class Database
         return $this->dbh->lastInsertId();
     }
 }
+
+
+//database wrapper bisa kita pakai di tabel manapun
