@@ -2,6 +2,8 @@
 // setiap class turunan nya harus mengimplementasikan property ataupun method pada abstract class.
 //abstract class harus melakukan inheritance kepada class turunannya menggunakan extends. 
 
+
+//class controller utama
 abstract class Controller
 {    
     abstract public function index();
