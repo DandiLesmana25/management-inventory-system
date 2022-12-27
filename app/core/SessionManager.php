@@ -35,7 +35,10 @@ class SessionManager
     {
 
         $jwt = $_COOKIE['PPI-Login'];
+        // payload > Menyimpan nilai-nilai yang akan menjadi inti dari token
         $payload = JWT::decode($jwt, new Key(SessionManager::$SECRET_KEY, 'HS256'));
         return $payload;
     }
 }
+
+

@@ -1,5 +1,7 @@
 <?php
 
+
+//inheritence dari class controller
 class Peminjaman extends Controller
 {
 

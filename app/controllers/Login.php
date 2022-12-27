@@ -1,5 +1,6 @@
 <?php
 
+//inheritence dari class controller
 class Login extends Controller
 {
 

@@ -1,6 +1,8 @@
 <?php
 
 //menggunakan method static agar kita tidak perlu melakukan instansiasi pada class flasher
+// karena Static methods  dapat dipanggil secara langsung - tanpa membuat instance kelas terlebih dahulu.
+
 
 class Flasher
 {
