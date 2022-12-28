@@ -49,7 +49,7 @@
 
                 <!-- Algoritma Pencarian start -->
 
-
+                <?php global $flag; ?>
 
                 <?php if (isset($_POST['cari_barang'])) : ?>
                     <?php foreach ($data['data_barang'] as $brg) : ?>
@@ -61,6 +61,7 @@
                             ),
                             strtolower($_POST['keywords'])
                         )) : ?>
+                            <?php $flag = $flag + 1; ?>
                             <td><?= $brg['kode_barang'] ?></td>
                             <td><?= $brg['nama_barang'] ?></td>
                             <td><?= $brg['tipe_barang'] ?></td>
@@ -69,6 +70,18 @@
                             <td><?= $brg['tgl_regist'] ?></td>
                             </tr>
                         <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php elseif ($flag = 0) : ?>
+                    <tr><?= "Data Tidak di temukan" ?></tr>
+                <?php elseif (!isset($_POST['cari_barang'])) : ?>
+                    <?php foreach ($data['data_barang'] as $brg) : ?>
+                        <td><?= $brg['kode_barang'] ?></td>
+                        <td><?= $brg['nama_barang'] ?></td>
+                        <td><?= $brg['tipe_barang'] ?></td>
+                        <td><?= $brg['jmlh_stok'] ?></td>
+                        <td><?= $brg['lokasi'] ?></td>
+                        <td><?= $brg['tgl_regist'] ?></td>
+                        </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>
 
