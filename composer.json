@@ -1,6 +1,12 @@
 {
     "require": {
+
+        //library untuk membuat variable konfigurasi khusus yang diperlukan di aplikasi kita
         "vlucas/phpdotenv": "^5.3",
+
+        // library untuk encode(menyandikan) dan decode (mengkode token) json web token di php
         "firebase/php-jwt": "^6.2"
+
+        //jwt digunakan di session management
     }
 }

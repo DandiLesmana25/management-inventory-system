@@ -12,7 +12,7 @@
 
 <div class="card shadow">
   <div class="card-body">
-    <table id="tbl-daftar-pinjaman" class="table mt-3 dt-responsive nowrap" style="width:100%">
+    <table id="#tbl-daftar-pinjaman" class="table mt-3 dt-responsive nowrap" style="width:100%">
       <thead class="thead-dark">
         <tr>
           <th>No</th>
